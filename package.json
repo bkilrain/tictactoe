@@ -1,0 +1,19 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "CLI TicTacToe game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkilrain/tictactoe.git"
+  },
+  "author": "Brian Kilrain <bkilrain@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkilrain/tictactoe/issues"
+  },
+  "homepage": "https://github.com/bkilrain/tictactoe#readme"
+}
