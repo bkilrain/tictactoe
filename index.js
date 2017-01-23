@@ -38,3 +38,18 @@ Game.prototype.checkWin = function(piece) {
   return false;
 }
 
+inquirer.prompt([{
+  name: 'player1',
+  type: 'input',
+  message: 'Player 1, what is your name?',
+  default: 'player1'
+},
+{
+  name: 'player2',
+  type: 'input',
+  message: 'Player 2, what is your name?',
+  default: 'player2'
+}
+
+
+  ])
