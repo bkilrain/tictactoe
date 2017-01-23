@@ -11,16 +11,30 @@ let Game = function(players) {
     [7,8,9]
   ];
 };
+
 Game.prototype.playTurn = function(activePlayer) {
   inquirer.prompt({
-    message: `${activePlayer}, what is your move?`
-    // validate: (input) => {
-    //   return new Promise(/[1-9]/.test(input);
-    // }
+    name: 'play',
+    message: `${activePlayer}, what is your move?`,
+    validate: (input) => {
+      return (/[1-9]/.test(input));
+    }
   }).then((move) => {
       console.log(move, 'this was chosen');
     });
 }
 
-let game = new Game(['bill','dave']);
-game.playTurn('bill');
+Game.prototype.checkWin = function(piece) {
+  //check horizontal and vertical wins
+  for (let i = 0; i < 3; i++) {
+    if ((this.board[i][0] === piece && this.board[i][1] === piece && this.board[i][2] === piece) || (this.board[0][i] === piece && this.board[1][i] === piece && this.board[2][i] === piece)) {
+      return true;
+    }
+  }
+  //check diagonal wins
+  if ((this.board[0][0] === piece && this.board[1][1] === piece && this.board[2][2] === piece) || (this.board[0][2] === piece && this.board[1][1] === piece && this.board[2][0]) === piece) {
+    return true;
+  }
+  return false;
+}
+
